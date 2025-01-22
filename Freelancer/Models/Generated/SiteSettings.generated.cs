@@ -63,7 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "13.5.2+3431f76")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mainNavigation")]
-		public virtual string MainNavigation => global::Umbraco.Cms.Web.Common.PublishedModels.MainNavigationPropeties.GetMainNavigation(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel MainNavigation => global::Umbraco.Cms.Web.Common.PublishedModels.MainNavigationPropeties.GetMainNavigation(this, _publishedValueFallback);
 
 		///<summary>
 		/// Site Name: Enter the name of the site. This will appear in the browser title and in the main top left logo.
