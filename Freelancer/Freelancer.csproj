@@ -9,9 +9,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Plugins\BlockGridPreviews\package.manifest" />
+    <None Include="wwwroot\media\facebook.svg" />
+    <None Include="wwwroot\media\mastodon.svg" />
+    <None Include="wwwroot\media\x-twitter.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Our.Umbraco.TagHelpers" Version="1.2.0" />
     <PackageReference Include="Umbraco.Cms" Version="13.5.2" />
   </ItemGroup>
 
@@ -23,6 +27,10 @@
 
   <ItemGroup>
     <Content Update="Views\Partials\blockgrid\areas.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Partials\blockgrid\Components\footerContent.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
