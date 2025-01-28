@@ -4,10 +4,14 @@
 @using Umbraco.Cms.Web.Common.Views
 @using Umbraco.Cms.Core.Models.PublishedContent
 @using Microsoft.AspNetCore.Html
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Freelancer.Extensions
+@using Slimsy.Enums;
+@using Slimsy.Extensions;
+@inject Smidge.SmidgeHelper SmidgeHelper
+@inject Slimsy.Services.SlimsyService SlimsyService
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, Smidge
 @addTagHelper *, Our.Umbraco.TagHelpers
-@inject Smidge.SmidgeHelper SmidgeHelper
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-@using Freelancer.Extensions
+@addTagHelper *, Slimsy
 
