@@ -1,5 +1,6 @@
 ﻿@using Umbraco.Extensions
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.ImageWithCaption>>
+@using Umbraco.Community.BlockPreview.Extensions;
 
 @{
     if (Model?.Content?.Image == null) return;
@@ -9,7 +10,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <img class="img-fluid" src="@Model.Content.Image.GetCropUrl(1000, 600)" alt="@Model.Content.Image.GetAltText()" />
+                @if (Context.Request.IsBackOfficeRequest())
+                {
+                    <img class="img-fluid" src="@Model.Content.Image.GetCropUrl(800, 580)" alt="@Model.Content.Image.GetAltText()" wdith="800" height="580"/>
+                }
+                else
+                {
+                    <img class="img-fluid lazyload" data-srcset="@Url.GetSrcSetUrls(Model.Content.Image, 800, 580)" src="@Model.Content.Image.GetCropUrl(80, 58, quality: 40)" alt="@Model.Content.Image.GetAltText()" wdith="800" height="580" sizes="auto" />
+                }
                 <p class="text-dark text-center fst-italic">@Model.Content.Caption</p>
             </div>
         </div>
