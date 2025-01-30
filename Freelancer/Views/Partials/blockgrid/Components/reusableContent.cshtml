@@ -1,0 +1,8 @@
+﻿@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem<ContentModels.ReusableContent>>
+
+@{
+    if (Model?.Content?.ContentItem is null) return;
+}
+
+@await Html.GetBlockGridHtmlAsync(Model.Content.ContentItem, "mainContent")
